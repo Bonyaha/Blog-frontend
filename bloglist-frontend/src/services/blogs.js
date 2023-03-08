@@ -11,6 +11,7 @@ const getAll = async () => {
   const response = await axios.get(baseUrl)
   return response.data
 }
+
 const create = async (newBlog) => {
   const config = {
     headers: { Authorization: token },
@@ -19,5 +20,21 @@ const create = async (newBlog) => {
   return response.data
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, setToken, create }
+const update = async (id, newObject) => {
+  const request = await axios.put(`${baseUrl}/${id}`, newObject)
+  return request.data
+}
+const delMany = async (blogsIds) => {
+  const config = {
+    headers: { Authorization: token },
+  }
+  await axios.delete(`${baseUrl}`, { data: { ids: blogsIds }, ...config })
+}
+
+export default {
+  getAll,
+  setToken,
+  create,
+  update,
+  delMany,
+}
