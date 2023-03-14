@@ -69,7 +69,7 @@ const BlogForm = ({ createBlog }) => {
         required
       />
 
-      <button type="submit" className="ms-0 btn btn-light btn-sm">
+      <button type="submit" className="ms-0 btn btn-light btn-sm" id="create">
         create
       </button>
     </form>

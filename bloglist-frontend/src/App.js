@@ -161,7 +161,7 @@ const App = () => {
       {user === null && (
         <>
           <h3>Log in to an application</h3>
-          <Togglable buttonLabel="login">
+          <Togglable buttonLabel='log in'>
             <LoginForm handleLogin={handleLogin} />
           </Togglable>
         </>
@@ -171,20 +171,20 @@ const App = () => {
         <div>
           <h2>Blogs</h2>
           {user.name} logged in
-          <button type="submit" onClick={logOut}>
+          <button type='submit' onClick={logOut}>
             log out
           </button>
-          <button type="button" onClick={() => sortedBlogs('likes', 'desc')}>
+          <button type='button' onClick={() => sortedBlogs('likes', 'desc')}>
             sort⬇
           </button>
-          <button type="button" onClick={() => sortedBlogs('likes', 'asc')}>
+          <button type='button' onClick={() => sortedBlogs('likes', 'asc')}>
             sort⬆
           </button>
-          <Togglable buttonLabel="new blog" ref={blogFormRef}>
+          <Togglable buttonLabel='new blog' ref={blogFormRef}>
             <BlogForm createBlog={addBlog} />
           </Togglable>
           {showDeleteMany.length > 1 ? (
-            <button className="btn btn-info ms-2" onClick={() => delBlog()}>
+            <button className='btn btn-info ms-2' onClick={() => delBlog()}>
               Delete selected
             </button>
           ) : (
@@ -197,6 +197,7 @@ const App = () => {
               addLike={() => addLike(blog.id)}
               delBlog={() => delBlog(blog.id)}
               handleCheck={() => handleCheck(blog.id)}
+              className='blogStyle'
             />
           ))}
         </div>
